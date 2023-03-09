@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="rjc-logo-png.png" type="image/x-icon">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <title>RJC Portfolio</title>
+</head>
+<body>
+      <nav>
+        <div class="logo">
+            <img src="rjc-logo-png.png" alt="">
+        </div>
+        <ul class="nav-links">
+          <li><a href="#">Home</a></li>
+          <li><a href="#prj">Projects</a></li>
+          <li><a href="#">About</a></li>
+        </ul>
+        <div class="burger">
+          <div class="line1"></div>
+          <div class="line2"></div>
+          <div class="line3"></div>
+        </div>
+      </nav>
+
+        <section class="home" id="home">
+
+        <div class="left-part" data-aos="zoom-out">
+            <center><h1>Hello! I'am <span style="color: blue">Renn Joshua</span> </h1>
+                <p>An aspiring Graphic/UI UX designer who loves making attractive designs that improve user experience, always learning and exploring new design trends to improve my skills and create innovative designs.</p></center>
+        </div>
+
+        <div class="right-part" data-aos="zoom-out">
+            <center><img src="sideview.jpg" alt="" class="my-img"></center>
+        </div>
+
+        </section>
+
+        <section class="projects" id="prj">
+            <h1 data-aos="zoom-out"> My Projects </h1>
+                <div class="images">
+                    <div data-aos="zoom-in-right"><img src="choco.png" alt=""></div>
+                    <div data-aos="zoom-out"><img src="phone.png" alt=""></div>
+                    <div data-aos="zoom-out"><img src="pizza.png" alt=""></div>
+                    <div data-aos="zoom-in-left"><img src="jordan.jpg" alt=""></div>
+          
+                </div>
+                <div id="myModal" class="modal">
+                    <span class="close">&times;</span>
+                    <img class="modal-content" id="img01">
+                  </div>
+                 <!-- <div class="casptone">
+                    <div class="pr-right">
+                        <h1>Capstone</h1>
+                        <p>Our Capstone Project is a website for a veterinary clinic that includes an appointment system, online consultation, SMS notification, and a point-of-sale (POS) feature. As part of the project, I am responsible for the Frontend task, which involves designing the UI of the website and creating the HTML, CSS, and JavaScript without using Bootstrap. You can visit our website at www.juanveterinarian.com.</p>
+                    </div>
+                    <div class="caps-img">
+                        <img src="caps1.png" alt="">
+                         <img src="caps2.png" alt="">
+                        <img src="caps3.png" alt="">
+                        <img src="caps4.png" alt="">
+                        <img src="caps5.png" alt="">  -->
+                    </div>
+                </div>
+        </section>
+
+      <script>
+  const navSlide = () => {
+  const burger = document.querySelector('.burger');
+  const nav = document.querySelector('.nav-links');
+  const navLinks = document.querySelectorAll('.nav-links li');
+
+  burger.addEventListener('click', () => {
+    // Toggle Nav
+    nav.classList.toggle('nav-active');
+
+    // Animate Links
+    navLinks.forEach((link, index) => {
+      if (link.style.animation) {
+        link.style.animation = '';
+      } else {
+        link.style.animation = `navLinkFade 0.5s ease forwards ${index / 7 + 0.3}s`;
+      }
+    });
+
+    // Burger Animation
+    burger.classList.toggle('toggle');
+  });
+}
+
+navSlide();
+
+      </script>
+      <script>
+        // Get the modal
+var modal = document.getElementById("myModal");
+
+// Get the image and insert it inside the modal - use its "alt" text as a caption
+var images = document.querySelectorAll(".images img");
+var modalImg = document.getElementById("img01");
+
+images.forEach(function(image) {
+  image.onclick = function() {
+    modal.style.display = "block";
+    modalImg.src = this.src;
+  }
+});
+
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[0];
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() {
+  modal.style.display = "none";
+}
+
+      </script>
+
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+    AOS.init();
+  </script>
+
+</body>
+<style>
+   
+
+</style>
+</html>
